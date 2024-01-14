@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <h1>
+      Which city's temperature would you like to see (in degrees Celsius)?
+    </h1>
+
+    <form action="/" method="post">
+      <label for="cityInput">City Name:</label>
+      <input
+        id="cityInput"
+        type="text"
+        name="cityName"
+        placeholder="Enter city name. ex. London"
+      />
+      <button type="submit">Go</button>
+    </form>
+
+    <h3>
+      The forecast for weather conditions in Dhaka over the next few days:
+    </h3>
+    <div id="openweathermap-widget-1"></div>
+    <script src="//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/d3.min.js"></script>
+    <script>
+      window.myWidgetParam ? window.myWidgetParam : (window.myWidgetParam = []);
+      window.myWidgetParam.push({
+        id: 1,
+        cityid: "1185241",
+        appid: "13a0905082de2b6e1aa988f8b675e363",
+        units: "metric",
+        containerid: "openweathermap-widget-1",
+      });
+      (function () {
+        var script = document.createElement("script");
+        script.async = true;
+        script.charset = "utf-8";
+        script.src =
+          "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(script, s);
+      })();
+    </script>
+
+    <h3>Dhaka's current weather:</h3>
+    <div id="openweathermap-widget-5"></div>
+    <script>
+      window.myWidgetParam ? window.myWidgetParam : (window.myWidgetParam = []);
+      window.myWidgetParam.push({
+        id: 5,
+        cityid: "1185241",
+        appid: "13a0905082de2b6e1aa988f8b675e363",
+        units: "metric",
+        containerid: "openweathermap-widget-5",
+      });
+      (function () {
+        var script = document.createElement("script");
+        script.async = true;
+        script.charset = "utf-8";
+        script.src =
+          "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(script, s);
+      })();
+    </script>
+  </body>
+</html>
